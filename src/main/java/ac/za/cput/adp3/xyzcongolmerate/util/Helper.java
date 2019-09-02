@@ -1,5 +1,6 @@
 package ac.za.cput.adp3.xyzcongolmerate.util;
 
+import java.util.Random;
 import java.util.UUID;
 
 public class Helper {
@@ -14,7 +15,21 @@ public class Helper {
 
     public static String getSuffixFromClassName(Class<?> aClass) {
         String className = getClassName(aClass);
-        throw new UnsupportedOperationException("Not yet supported!");
+
+        String randomString = "";
+        //int length = 2;
+
+        //Random random = new Random();
+        char[] text = new char[className.length()];
+        for (int i=0; i < className.length(); i++){
+            text[i] = className.charAt(i);
+        }
+        for(int i =0; i <className.length(); i++){
+            if (Character.isUpperCase(text[i]))
+                randomString += text[i];
+        }
+        return generateRandomGivenSuffix(randomString);
+
         /**
          * Your implementation goes here
          *
